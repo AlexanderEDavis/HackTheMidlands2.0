@@ -1,16 +1,36 @@
 var header = document.querySelector('header');
 var section = document.querySelector('section');
 
-var requestURL = 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=b348f8cb6e91416fa512d1d00cf5d98c';
+//Define NewsAPI query here through URL params
+var reqURL = 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=b348f8cb6e91416fa512d1d00cf5d98c';
 
-var req = new XMLHttpRequest();
-req.open('GET', requestURL, true);
-req.responseType = 'json';
-req.send();
+// Call to getJSON method takes above URL as argument
+// will not be needed when called from PHP
+getJSON(reqURL);
 
-req.onload = function () {
-  var res = req.response;
-  showArticles(res);
+function getJSON (requestURL) {
+  var req = new XMLHttpRequest();
+  req.open('GET', requestURL, true);
+  req.responseType = 'json';
+  req.send();
+
+  req.onload = function () {
+    var res = req.response;
+    unpackArticles(res);
+  }
+}
+
+function unpackArticles(jsonObj) {
+  var articles = jsonObj['articles']
+
+  for (var i = 0; i < articles.length; i++) {
+    var myArticles = {};
+    myArticles["heading"] = articles[i].title;
+    myArticles["author"] = articles[i].author;
+    myArticles["description"] = articles[i].description;
+    myArticles["url"] = articles[i].url;
+    console.log(myArticles);
+  }
 }
 
 function showArticles(jsonObj) {
