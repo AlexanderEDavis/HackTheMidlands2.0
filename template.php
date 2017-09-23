@@ -20,7 +20,6 @@
     </section>
 
     <section id="content">
-      <div class="wrap" style="width:100%; overflow:auto;">
 
       </div>
 
