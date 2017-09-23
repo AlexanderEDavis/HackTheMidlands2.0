@@ -1,12 +1,12 @@
 <html>
   <head>
-    <title>NewsPush</title>
+    <title>blank</title>
     <link rel="stylesheet" type="text/css" href="./style/main.css"/>
   </head>
 
   <body>
     <nav>
-      <h1>NewsPush</h1>
+      <h1>project goes here</h1>
       <?php
         include 'navigationvisit.php'
       ?>
