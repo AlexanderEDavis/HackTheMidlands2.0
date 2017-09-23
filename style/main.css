@@ -5,6 +5,13 @@ h1, h2, h3, h4, h5, h6, li{
   color: white;
 }
 
+.realh1{
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial;
+  color: white;
+}
+
 html, body, section{
   display: block;
   margin: 0px;
@@ -61,7 +68,7 @@ nav{
   height: 10%;
   background-color: black;
 }
-nav h1{
+nav h1 .realh1{
   color: white;
   float: left;
   position: relative;
@@ -114,7 +121,7 @@ nav ul a{
   transform:translateY(-50%);
   color: white;
 }
-#header-content h1{
+#header-content h1 .realh1{
   font-size: 60px;
 }
 
