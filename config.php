@@ -11,3 +11,10 @@
   };
   firebase.initializeApp(config);
 </script>
+
+<?php
+
+$credentials = new Nexmo\Client\Credentials\Basic('a5213d56', 'f92BZFJldC6EJ1t');
+
+
+?>
