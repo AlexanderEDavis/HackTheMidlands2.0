@@ -16,7 +16,6 @@
         include 'navigationvisit.php'
       ?>
     </nav>
-
     <section id="content">
       <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
 
@@ -42,7 +41,6 @@
 
       </div>
     </section>
-
     <?php
       include 'footer.php'
     ?>
