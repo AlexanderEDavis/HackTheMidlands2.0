@@ -167,3 +167,7 @@ nav ul a{
 table, th, td{
   border: 1px solid white;
 }
+
+span{
+  padding: 4px;
+}

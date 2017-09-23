@@ -15,20 +15,10 @@
     <script src="/__/firebase/4.0.0/firebase-auth.js"></script>
     <script src="/__/firebase/init.js"></script>
 
+    <?php
+       include('config.php');
+    ?>
 
-  <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCgb98gvq7LsLeSmzNWOnu9Sg2SAWy41EY",
-      authDomain: "newspush-5ae5e.firebaseapp.com",
-      databaseURL: "https://newspush-5ae5e.firebaseio.com/",
-      projectId: "newspush-5ae5e",
-      storageBucket: "",
-      messagingSenderId: "918366645049"
-    };
-    firebase.initializeApp(config);
-  </script>
     <link rel="stylesheet" type="text/css" href="style/main.css"/>
     <script type="text/javascript">
 
@@ -142,6 +132,11 @@
         // [END sendpasswordemail];
       }
 
+      function RemoveElementByID(target) {
+        var element = document.getElementById(target);
+        element.parentNode.removeChild(element);
+      }
+
       /**
        * initApp handles setting up UI event listeners and registering Firebase auth listeners:
        *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
@@ -153,6 +148,7 @@
         firebase.auth().onAuthStateChanged(function(user) {
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-verify-email').disabled = true;
+          // document.getElementById('quickstart-verify-email').style.visibility = 'hidden';
           // [END_EXCLUDE]
           if (user) {
             // User is signed in.
@@ -167,8 +163,14 @@
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
             document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+            document.getElementById('quickstart-sign-up').disabled = true;
+            document.getElementById('quickstart-password-reset').disabled = true;
+            RemoveElementByID('quickstart-password-reset');
+            RemoveElementByID('quickstart-sign-up');
             if (!emailVerified) {
               document.getElementById('quickstart-verify-email').disabled = false;
+            } else {
+              RemoveElementByID('quickstart-verify-email');
             }
             // [END_EXCLUDE]
           } else {
@@ -216,16 +218,13 @@
             <p>Enter an email and password below and either sign in to an existing account or sign up</p>
 
             <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
-            &nbsp;&nbsp;&nbsp;
             <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
             <br/><br/>
-            <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
-            &nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
-            &nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-button--raised" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
-            &nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
+            <span><button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button></span>
+            <span><button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button></span>
+            <br></br>
+            <span><button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button></span>
+            <span><button class="mdl-button mdl-js-button mdl-button--raised" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button></span>
 
             <!-- Container where we'll display the user details -->
             <div class="quickstart-user-details-container">
