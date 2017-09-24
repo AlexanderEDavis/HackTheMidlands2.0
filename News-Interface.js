@@ -47,5 +47,6 @@ function getNewsSources(requestURL) {
       Source["logoURL"] = results[i].urlsToLogos.medium;
       SourceArray.push(Source);
     }
+    return SourceArray;
   }
 }
