@@ -224,6 +224,14 @@
               <span id="quickstart-sign-in-status"></span>
               <pre><code id="quickstart-account-details">''</code></pre>
             </div>
+            <form method="post">
+              <p style="font-family: sans-serif;color:black;">
+                <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="forename" name="forename" placeholder="First Name"></br></br>
+                <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="surname" name="surname" placeholder="Last Name"></br></br>
+                <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"></br></br>
+              </br>
+              <input class="mdl-button mdl-js-button mdl-button--raised" id="subscription-button" name="save-subscription" type="submit" value="Save Subscription">
+            </form>
           </div>
         </div>
 

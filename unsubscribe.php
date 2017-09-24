@@ -222,7 +222,7 @@
             <!-- Container where we'll display the user details -->
             <div class="quickstart-user-details-container">
               <span id="quickstart-sign-in-status"></span>
-              <pre><code id="quickstart-account-details">''</code></pre>
+              <pre><code id="quickstart-account-details"></code></pre>
             </div>
           </div>
         </div>
