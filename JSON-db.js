@@ -18,9 +18,9 @@ function getUser(requestURL) {
   }
 }
 
-function createUser(requestURL) {
+function createUser(requestURL, data) {
   var req = new XMLHttpRequest();
   req.open('POST', requestURL, true);
-  req.responseType = 'json';
-  req.send();
-}
+  request.setRequestHeader('Content-Type', 'application/json');
+  request.send(data);
+};
