@@ -1,6 +1,3 @@
-//Define NewsArticles and NewsSources queries here through URL params
-var articlesURL = 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=b348f8cb6e91416fa512d1d00cf5d98c';
-var sourcesURL = 'https://newsapi.org/v1/sources'
 // Call to getJSON method takes above URL as argument
 // will not be needed when called from PHP
 // getArticles(articlesURL);

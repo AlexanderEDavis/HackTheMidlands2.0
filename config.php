@@ -15,6 +15,10 @@
 <?php
 require("vendor/autoload.php");
 $credentials = new Nexmo\Client\Credentials\Basic('a5213d56', 'f92BZFJldC6EJ1t');
-
-
 ?>
+
+<script>
+//Define NewsArticles and NewsSources queries here through URL params
+var news-url1 = 'https://newsapi.org/v1/articles?source=';
+var news-apikey = '&apiKey=b348f8cb6e91416fa512d1d00cf5d98c';
+</script>

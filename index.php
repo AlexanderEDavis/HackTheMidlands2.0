@@ -159,6 +159,8 @@
             var isAnonymous = user.isAnonymous;
             var uid = user.uid;
             var providerData = user.providerData;
+
+            
             // [START_EXCLUDE]
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
@@ -202,7 +204,7 @@
   <body>
     <nav>
       <?php
-        include 'navigationvisit.php'
+
       ?>
     </nav>
 
