@@ -24,6 +24,10 @@
 
             <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
 
+            <select class="mdl-textfield__input" style="display:inline;width:auto;" id = "dropdown" name="dropdown">
+              <option value="test">Test</option>
+            </select>
+
             <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
 
             <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
