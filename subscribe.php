@@ -161,7 +161,6 @@
 
 
             // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
             document.getElementById('quickstart-sign-up').disabled = true;
             document.getElementById('quickstart-password-reset').disabled = true;
@@ -222,8 +221,18 @@
             <!-- Container where we'll display the user details -->
             <div class="quickstart-user-details-container">
               <span id="quickstart-sign-in-status"></span>
-              <pre><code id="quickstart-account-details">''</code></pre>
+              <pre><code id="quickstart-account-details"></code></pre>
             </div>
+            <form method="post">
+              <p style="font-family: sans-serif;color:black;">
+                <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="forename" name="forename" placeholder="First Name"></br></br>
+                <input  class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="surname" name="surname" placeholder="Last Name"></br></br>
+                Student ID: <input type ="text" name="studentID"></br></br>
+                Email Address: <input type="text" name="emailAddress"></br></br>
+                Phone Number: <input type="text" name="phoneNumber"></p>
+              </br>
+              <input class="mdl-button mdl-js-button mdl-button--raised" id="subscription-button" name="save-subscription" type="submit" value="Save Subscription">
+            </form>
           </div>
         </div>
 

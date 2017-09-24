@@ -148,6 +148,7 @@
         firebase.auth().onAuthStateChanged(function(user) {
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-verify-email').disabled = true;
+          RemoveElementByID('quickstart-verify-email');
           // [END_EXCLUDE]
           if (user) {
             // User is signed in.
@@ -161,7 +162,6 @@
 
 
             // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
             document.location.href = 'subscribe.php';
             document.getElementById('quickstart-sign-up').disabled = true;
@@ -177,9 +177,7 @@
           } else {
             // User is signed out.
             // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
             document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-            document.getElementById('quickstart-account-details').textContent = ;
             // [END_EXCLUDE]
           }
           // [START_EXCLUDE silent]
@@ -229,7 +227,7 @@
 
             <!-- Container where we'll display the user details -->
             <div class="quickstart-user-details-container">
-              Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+              <span id="quickstart-sign-in-status"></span>
               <pre><code id="quickstart-account-details"></code></pre>
             </div>
           </div>

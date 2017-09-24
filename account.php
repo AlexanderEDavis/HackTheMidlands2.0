@@ -224,6 +224,14 @@
               <span id="quickstart-sign-in-status"></span>
               <pre><code id="quickstart-account-details">''</code></pre>
             </div>
+            <form method="post">
+              <p style="font-family: sans-serif;color:black;">
+                First Name: <input type="text" name="firstName"></br></br>
+                Last Name: <input type="text" name="lastName"></br></br>
+                Phone Number: <input type="text" name="phoneNumber"></p>
+              </br>
+              <input class="mdl-button mdl-js-button mdl-button--raised" id="subscription-button" name="save-subscription" type="submit" value="Save Subscription">
+            </form>
           </div>
         </div>
 
