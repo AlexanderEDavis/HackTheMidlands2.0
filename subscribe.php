@@ -29,6 +29,7 @@
        */
       function toggleSignIn() {
         if (firebase.auth().currentUser) {
+          console.log(firebase.auth().currentUser)
           // [START signout]
           firebase.auth().signOut();
           // [END signout]
@@ -227,7 +228,7 @@
             </div>
             <form method="post">
               <p style="font-family: sans-serif;color:black;">
-                <select name="feed">
+                <select class="mdl-textfield__input" style="display:inline;width:auto;" name="feed">
                     <option selected="selected">Choose one</option>
                     <?php
                     // Iterating through the product array

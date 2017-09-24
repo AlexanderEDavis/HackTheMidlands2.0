@@ -11,13 +11,15 @@
     <!-- Import and configure the Firebase SDK -->
     <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
     <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-    <script src="/__/firebase/4.0.0/firebase-app.js"></script>
-    <script src="/__/firebase/4.0.0/firebase-auth.js"></script>
-    <script src="/__/firebase/init.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-auth.js"></script>
 
     <?php
        include('config.php');
     ?>
+
+    <script type="text/javascript">
+    </script>
 
     <link rel="stylesheet" type="text/css" href="style/main.css"/>
     <script type="text/javascript">
@@ -158,7 +160,8 @@
             var isAnonymous = user.isAnonymous;
             var uid = user.uid;
             var providerData = user.providerData;
-
+            config.user = user['uid'];
+            console.log(config.user);
 
             // [START_EXCLUDE]
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
@@ -194,6 +197,10 @@
       window.onload = function() {
         initApp();
       };
+
+      function fetchData(uid){
+        
+      }
     </script>
   </head>
 
