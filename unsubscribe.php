@@ -224,6 +224,8 @@
               <span id="quickstart-sign-in-status"></span>
               <pre><code id="quickstart-account-details"></code></pre>
             </div>
+            <select class="mdl-textfield__input" style="display:inline;width:auto;" id="service" name="service">
+            </select>
           </div>
         </div>
 
