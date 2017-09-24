@@ -6,17 +6,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style/main.css">
 
     <!-- Import and configure the Firebase SDK -->
     <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
     <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-    <script src="/__/firebase/4.0.0/firebase-app.js"></script>
-    <script src="/__/firebase/4.0.0/firebase-auth.js"></script>
-    <script src="/__/firebase/init.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-auth.js"></script>
+    <script src="News-Interface.js"></script>
 
     <?php
        include('config.php');
+
+       $news = json_decode(file_get_contents("https://newsapi.org/v1/sources"), true);
     ?>
 
     <link rel="stylesheet" type="text/css" href="style/main.css"/>
@@ -161,7 +163,6 @@
 
 
             // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
             document.getElementById('quickstart-sign-up').disabled = true;
             document.getElementById('quickstart-password-reset').disabled = true;
@@ -214,7 +215,7 @@
             <h2 class="mdl-card__title-text">News Feed Subscriptions</h2>
           </div>
           <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-            <p>Sign Up to News Feeds Here</p>
+            <p>Unsubscribe to news feeds here</p>
             <span><button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button></span>
             <span><button class="mdl-button mdl-js-button mdl-button--raised" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button></span>
             <span><button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button></span>
@@ -224,17 +225,28 @@
               <span id="quickstart-sign-in-status"></span>
               <pre><code id="quickstart-account-details"></code></pre>
             </div>
-            <select class="mdl-textfield__input" style="display:inline;width:auto;" id="service" name="service">
-            </select>
+            <form method="post">
+              <p style="font-family: sans-serif;color:black;">
+                <select name="feed">
+                    <option selected="selected">Choose one</option>
+                    <?php
+                    // Iterating through the product array
+                    foreach($news['sources'] as $item){
+                      ?>
+                      <option value="<?php echo strtolower($item['id']); ?>"><?php echo $item['name']; ?></option>;
+                      <?php
+                    }
+                    ?>
+                  </select>
+              </br>
+              <input class="mdl-button mdl-js-button mdl-button--raised" id="subscription-button" name="save-subscription" type="submit" value="Save Subscription">
+            </form>
           </div>
         </div>
-
       </div>
     </section>
-
     <?php
       include 'footer.php'
     ?>
-
    </body>
 </html>

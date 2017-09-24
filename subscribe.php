@@ -6,17 +6,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style/main.css">
 
     <!-- Import and configure the Firebase SDK -->
     <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
     <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-    <script src="/__/firebase/4.0.0/firebase-app.js"></script>
-    <script src="/__/firebase/4.0.0/firebase-auth.js"></script>
-    <script src="/__/firebase/init.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-auth.js"></script>
+    <script src="News-Interface.js"></script>
 
     <?php
        include('config.php');
+
+       $news = json_decode(file_get_contents("https://newsapi.org/v1/sources"), true);
     ?>
 
     <link rel="stylesheet" type="text/css" href="style/main.css"/>
@@ -225,23 +227,26 @@
             </div>
             <form method="post">
               <p style="font-family: sans-serif;color:black;">
-                <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="forename" name="forename" placeholder="First Name"></br></br>
-                <input  class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="surname" name="surname" placeholder="Last Name"></br></br>
-                Student ID: <input type ="text" name="studentID"></br></br>
-                Email Address: <input type="text" name="emailAddress"></br></br>
-                Phone Number: <input type="text" name="phoneNumber"></p>
+                <select name="feed">
+                    <option selected="selected">Choose one</option>
+                    <?php
+                    // Iterating through the product array
+                    foreach($news['sources'] as $item){
+                      ?>
+                      <option value="<?php echo strtolower($item['id']); ?>"><?php echo $item['name']; ?></option>;
+                      <?php
+                    }
+                    ?>
+                  </select>
               </br>
               <input class="mdl-button mdl-js-button mdl-button--raised" id="subscription-button" name="save-subscription" type="submit" value="Save Subscription">
             </form>
           </div>
         </div>
-
       </div>
     </section>
-
     <?php
       include 'footer.php'
     ?>
-
    </body>
 </html>

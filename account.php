@@ -161,7 +161,6 @@
 
 
             // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
             document.getElementById('quickstart-sign-up').disabled = true;
             document.getElementById('quickstart-password-reset').disabled = true;
@@ -211,10 +210,10 @@
         <!-- Container for the demo -->
         <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
           <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
-            <h2 class="mdl-card__title-text">News Feed Subscriptions</h2>
+            <h2 class="mdl-card__title-text">My Account</h2>
           </div>
           <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-            <p>Sign Up to News Feeds Here</p>
+            <p>Update your account settings</p>
             <span><button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button></span>
             <span><button class="mdl-button mdl-js-button mdl-button--raised" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button></span>
             <span><button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button></span>
@@ -222,15 +221,14 @@
             <!-- Container where we'll display the user details -->
             <div class="quickstart-user-details-container">
               <span id="quickstart-sign-in-status"></span>
-              <pre><code id="quickstart-account-details">''</code></pre>
+              <pre><code id="quickstart-account-details"></code></pre>
             </div>
             <form method="post">
               <p style="font-family: sans-serif;color:black;">
                 <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="forename" name="forename" placeholder="First Name"></br></br>
                 <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="surname" name="surname" placeholder="Last Name"></br></br>
                 <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"></br></br>
-              </br>
-              <input class="mdl-button mdl-js-button mdl-button--raised" id="subscription-button" name="save-subscription" type="submit" value="Save Subscription">
+              <input class="mdl-button mdl-js-button mdl-button--raised" id="subscription-button" name="save-subscription" type="submit" value="Save Details">
             </form>
           </div>
         </div>

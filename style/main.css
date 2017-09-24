@@ -17,7 +17,7 @@ html, body, section{
   margin: 0px;
   width: 100%;
   padding: 0px;
-  background: #00adee;
+  background: #f1f1f1;
 }
 
 ul{
@@ -56,6 +56,12 @@ footer{
   background-color: #232323;
   color: #fff;
   font-family: sans-serif;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
 }
 
 footer a{
