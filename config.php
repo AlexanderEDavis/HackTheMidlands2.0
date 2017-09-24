@@ -15,9 +15,6 @@
 <?php
 require("vendor/autoload.php");
 $credentials = new Nexmo\Client\Credentials\Basic('a5213d56', 'f92BZFJldC6EJ1t');
-
-// Get the Database service for the default app
-var defaultDatabase = firebase.database();
 ?>
 
 <script>
