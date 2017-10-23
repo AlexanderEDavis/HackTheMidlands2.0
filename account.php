@@ -199,7 +199,6 @@
       };
 
       function fetchData(uid){
-        
       }
     </script>
   </head>

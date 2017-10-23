@@ -2,12 +2,12 @@
 <script>
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyCgb98gvq7LsLeSmzNWOnu9Sg2SAWy41EY",
-    authDomain: "newspush-5ae5e.firebaseapp.com",
-    databaseURL: "https://newspush-5ae5e.firebaseio.com/",
-    projectId: "newspush-5ae5e",
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
     storageBucket: "",
-    messagingSenderId: "918366645049"
+    messagingSenderId: ""
   };
   firebase.initializeApp(config);
   var user = {};
@@ -15,11 +15,11 @@
 
 <?php
 require("vendor/autoload.php");
-$credentials = new Nexmo\Client\Credentials\Basic('a5213d56', 'f92BZFJldC6EJ1t');
+$credentials = new Nexmo\Client\Credentials\Basic('', '');
 ?>
 
 <script>
 //Define NewsArticles and NewsSources queries here through URL params
-var newsurl = 'https://newsapi.org/v1/articles?source=';
-var newsapikey = '&apiKey=b348f8cb6e91416fa512d1d00cf5d98c';
+var newsurl = '';
+var newsapikey = '';
 </script>
